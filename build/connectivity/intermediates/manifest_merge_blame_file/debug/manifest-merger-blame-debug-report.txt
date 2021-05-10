@@ -1,0 +1,15 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.flutter.plugins.connectivity" >
+4
+5    <uses-sdk android:minSdkVersion="16" />
+5-->C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\connectivity-0.4.9+5\android\src\main\AndroidManifest.xml
+6
+7    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+7-->C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\connectivity-0.4.9+5\android\src\main\AndroidManifest.xml:3:3-76
+7-->C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\connectivity-0.4.9+5\android\src\main\AndroidManifest.xml:3:20-74
+8    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+8-->C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\connectivity-0.4.9+5\android\src\main\AndroidManifest.xml:4:3-74
+8-->C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\connectivity-0.4.9+5\android\src\main\AndroidManifest.xml:4:20-71
+9
+10</manifest>

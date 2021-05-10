@@ -1,0 +1,4 @@
+#Tue May 11 05:41:46 ICT 2021
+base.0=E\:\\PEKERJAAN\\KODING\\YOUTUBE\\boilerplate_flutter\\flutter_ui_boilerplate\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

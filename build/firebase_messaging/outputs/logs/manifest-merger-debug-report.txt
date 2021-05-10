@@ -1,0 +1,41 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:1:1-15:12
+INJECTED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:1:1-15:12
+INJECTED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:1:1-15:12
+	package
+		ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:2:3-49
+		INJECTED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml
+		INJECTED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:4:3-14:17
+service#io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService
+ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:5:5-9:15
+	android:name
+		ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:5:14-61
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:6:7-8:23
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:7:9-69
+	android:name
+		ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:7:17-67
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:10:5-13:15
+	android:name
+		ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:10:14-85
+meta-data#com.google.firebase.components:io.flutter.plugins.firebasemessaging.FlutterFirebaseAppRegistrar
+ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:11:7-12:86
+	android:value
+		ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:12:18-83
+	android:name
+		ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml:11:18-128
+uses-sdk
+INJECTED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml
+INJECTED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml
+		ADDED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml
+		INJECTED from C:\src\flutter\.pub-cache\hosted\pub.dartlang.org\firebase_messaging-5.1.8\android\src\main\AndroidManifest.xml

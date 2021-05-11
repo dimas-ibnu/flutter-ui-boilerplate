@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: <Widget>[
                         Container(
                           child: Image.asset(
-                            './assets/images/logo.png',
+                            './assets/images/person.jpg',
                             color: themeData.colorScheme.primary,
                             width: 54,
                             height: 54,

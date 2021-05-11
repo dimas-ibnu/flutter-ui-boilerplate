@@ -25,10 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _current = 0;
 
   List imgCategoryList = [
-    './assets/images/all_categories.png',
-    './assets/images/all_categories.png',
-    './assets/images/all_categories.png',
-    './assets/images/all_categories.png',
+    './assets/images/categories/love.png',
+    './assets/images/categories/double_tree.png',
+    './assets/images/categories/pinus.png',
+    './assets/images/categories/earth.png',
   ];
 
   List nameCategoryList = [
@@ -216,8 +216,8 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         children: <Widget>[
           Container(
-            width: MySize.getScaledSizeWidth(65),
-            height: MySize.getScaledSizeWidth(65),
+            width: MySize.getScaledSizeWidth(55),
+            height: MySize.getScaledSizeWidth(55),
             decoration: BoxDecoration(
               color: themeData.colorScheme.primary.withAlpha(20),
               borderRadius: BorderRadius.circular(10),
@@ -252,7 +252,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     return Container(
-      padding: Spacing.only(top : 20),
+      padding: Spacing.only(top: 20, bottom: 20),
       child: Column(
         children: [
           Row(
@@ -297,8 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text("100 Trees from Lucy to Indonesia",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
-                      style: AppTheme.getTextStyle(
-                          themeData.textTheme.caption,
+                      style: AppTheme.getTextStyle(themeData.textTheme.caption,
                           fontWeight: 700,
                           color: themeData.colorScheme.onPrimary)),
                   Text("100 pohon untuk indonesia",
@@ -313,14 +312,30 @@ class _HomeScreenState extends State<HomeScreen> {
           top: 20.0,
           right: 10.0,
           child: SizedBox(
-              width: MySize.getScaledSizeWidth(150  ),
+              width: MySize.getScaledSizeWidth(150),
               child: Text("#SAVEARTH",
                   textAlign: TextAlign.right,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                   style: AppTheme.getTextStyle(themeData.textTheme.caption,
-                  fontWeight: 800,
+                      fontWeight: 800,
                       color: themeData.colorScheme.onPrimary)))),
+      Positioned(
+        bottom: 20.0,
+        right: 10.0,
+        child: ClipOval(
+          child: Container(
+            width: MySize.getScaledSizeWidth(30),
+            height: MySize.getScaledSizeWidth(30),
+              color: themeData.colorScheme.onPrimary,
+            child: Image.asset(
+              imgCategoryList[index],
+              fit: BoxFit.cover,
+            ),
+            padding: Spacing.all(8),
+          ),
+        ),
+      ),
     ]);
   }
 

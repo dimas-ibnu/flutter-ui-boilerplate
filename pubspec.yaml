@@ -45,8 +45,6 @@ dependencies:
 
 
 
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -75,27 +73,21 @@ flutter:
     - assets/lang/es.json
     - assets/lang/fr.json
 
-
-    #Images
-    - assets/images/logo.png
-    - assets/images/logo-white.png
-
-    #Images
-    - assets/images/offer-icon.png
-    - assets/images/shopping.png
-
     #Placeholder Images
-    - assets/images/placeholder/no-product-image.png
-    - assets/images/placeholder/no-shop-image.png
+    - assets/images/placeholder/no-image.png
 
 
     #Images - Illustrations
-    - assets/images/empty-cart.png
     - assets/images/person.jpg
     - assets/images/banner.png
     - assets/images/forest.png
     - assets/images/maintenance.png
-    - assets/images/all_categories.png
+
+    #Images - Categories
+    - assets/images/categories/double_tree.png
+    - assets/images/categories/earth.png
+    - assets/images/categories/love.png
+    - assets/images/categories/pinus.png
 
     #Google map
     - assets/map/shop-pin.png

@@ -1,8 +1,6 @@
 import 'package:Boilerplate/AppTheme.dart';
 import 'package:Boilerplate/AppThemeNotifier.dart';
 import 'package:Boilerplate/utils/SizeConfig.dart';
-import 'package:Boilerplate/utils/Validator.dart';
-import 'package:Boilerplate/views/AppScreen.dart';
 import 'package:Boilerplate/views/auth/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';

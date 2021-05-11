@@ -2,6 +2,10 @@ import 'package:Boilerplate/AppTheme.dart';
 import 'package:Boilerplate/AppThemeNotifier.dart';
 import 'package:Boilerplate/utils/SizeConfig.dart';
 import 'package:Boilerplate/views/HomeScreen.dart';
+import 'package:Boilerplate/views/auth/RegisterScreen.dart';
+import 'package:Boilerplate/views/auth/LoginScreen.dart';
+import 'package:Boilerplate/views/MaintenanceScreen.dart';
+import 'package:Boilerplate/views/DetailScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +33,7 @@ class _AppScreenState extends State<AppScreen>
 
   @override
   void initState() {
-    _tabController = new TabController(length: 4, vsync: this, initialIndex: 0);
+    _tabController = new TabController(length: 5, vsync: this, initialIndex: 0);
     _tabController.addListener(_handleTabSelection);
 
     super.initState();
@@ -81,75 +85,28 @@ class _AppScreenState extends State<AppScreen>
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Icon(
-                                    MdiIcons.store,
+                                    MdiIcons.viewDashboard,
                                     color: themeData.colorScheme.primary,
                                   ),
                                   Container(
+                                    
                                     margin: Spacing.top(4),
                                     decoration: BoxDecoration(
                                         color: themeData.primaryColor,
                                         borderRadius: new BorderRadius.all(
                                             Radius.circular(2.5))),
                                     height: 5,
-                                    width: 5,
+                                    width: 15,
                                   )
                                 ],
                               )
                             : Icon(
-                                MdiIcons.storeOutline,
+                                MdiIcons.viewDashboardOutline,
                                 color: themeData.colorScheme.onBackground,
                               ),
                       ),
                       Container(
                           child: (_currentIndex == 1)
-                              ? Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    Icon(
-                                      MdiIcons.magnify,
-                                      color: themeData.colorScheme.primary,
-                                    ),
-                                    Container(
-                                      margin: Spacing.top(4),
-                                      decoration: BoxDecoration(
-                                          color: themeData.primaryColor,
-                                          borderRadius: new BorderRadius.all(
-                                              Radius.circular(2.5))),
-                                      height: 5,
-                                      width: 5,
-                                    )
-                                  ],
-                                )
-                              : Icon(
-                                  MdiIcons.magnify,
-                                  color: themeData.colorScheme.onBackground,
-                                )),
-                      Container(
-                          child: (_currentIndex == 2)
-                              ? Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    Icon(
-                                      MdiIcons.contentPaste,
-                                      color: themeData.colorScheme.primary,
-                                    ),
-                                    Container(
-                                      margin: Spacing.top(4),
-                                      decoration: BoxDecoration(
-                                          color: themeData.primaryColor,
-                                          borderRadius: new BorderRadius.all(
-                                              Radius.circular(2.5))),
-                                      height: 5,
-                                      width: 5,
-                                    )
-                                  ],
-                                )
-                              : Icon(
-                                  MdiIcons.contentPaste,
-                                  color: themeData.colorScheme.onBackground,
-                                )),
-                      Container(
-                          child: (_currentIndex == 3)
                               ? Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
@@ -164,7 +121,7 @@ class _AppScreenState extends State<AppScreen>
                                           borderRadius: new BorderRadius.all(
                                               Radius.circular(2.5))),
                                       height: 5,
-                                      width: 5,
+                                      width: 15,
                                     )
                                   ],
                                 )
@@ -172,33 +129,89 @@ class _AppScreenState extends State<AppScreen>
                                   MdiIcons.accountOutline,
                                   color: themeData.colorScheme.onBackground,
                                 )),
+                      Container(
+                          child: (_currentIndex == 2)
+                              ? Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Icon(
+                                      MdiIcons.accountPlus,
+                                      color: themeData.colorScheme.primary,
+                                    ),
+                                    Container(
+                                      margin: Spacing.top(4),
+                                      decoration: BoxDecoration(
+                                          color: themeData.primaryColor,
+                                          borderRadius: new BorderRadius.all(
+                                              Radius.circular(2.5))),
+                                      height: 5,
+                                      width: 15,
+                                    )
+                                  ],
+                                )
+                              : Icon(
+                                  MdiIcons.accountPlusOutline,
+                                  color: themeData.colorScheme.onBackground,
+                                )),
+                      Container(
+                          child: (_currentIndex == 3)
+                              ? Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Icon(
+                                      MdiIcons.noteRemove,
+                                      color: themeData.colorScheme.primary,
+                                    ),
+                                    Container(
+                                      margin: Spacing.top(4),
+                                      decoration: BoxDecoration(
+                                          color: themeData.primaryColor,
+                                          borderRadius: new BorderRadius.all(
+                                              Radius.circular(2.5))),
+                                      height: 5,
+                                      width: 15,
+                                    )
+                                  ],
+                                )
+                              : Icon(
+                                  MdiIcons.noteRemoveOutline,
+                                  color: themeData.colorScheme.onBackground,
+                                )),
+                      Container(
+                          child: (_currentIndex == 4)
+                              ? Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Icon(
+                                      MdiIcons.details,
+                                      color: themeData.colorScheme.primary,
+                                    ),
+                                    Container(
+                                      margin: Spacing.top(4),
+                                      decoration: BoxDecoration(
+                                          color: themeData.primaryColor,
+                                          borderRadius: new BorderRadius.all(
+                                              Radius.circular(2.5))),
+                                      height: 5,
+                                      width: 15,
+                                    )
+                                  ],
+                                )
+                              : Icon(
+                                  MdiIcons.details,
+                                  color: themeData.colorScheme.onBackground,
+                                )),
                     ],
                   ),
                 )),
-            // floatingActionButton: FloatingActionButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) {
-            //         return HomeScreen();
-            //       }),
-            //     );
-            //   },
-            //   child: Icon(
-            //     MdiIcons.cartOutline,
-            //     color: themeData.colorScheme.primary,
-            //   ),
-            //   backgroundColor: customAppTheme.bgLayer1,
-            // ),
-            // floatingActionButtonLocation:
-            //     FloatingActionButtonLocation.centerDocked,
             body: TabBarView(
               controller: _tabController,
               children: <Widget>[
                 HomeScreen(),
-                HomeScreen(),
-                HomeScreen(),
-                HomeScreen(),
+                LoginScreen(),
+                RegisterScreen(),
+                MaintenanceScreen(),
+                DetailScreen(),
               ],
             ),
           ),

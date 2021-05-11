@@ -1,6 +1,4 @@
 import 'package:Boilerplate/utils/SizeConfig.dart';
-import 'package:Boilerplate/views/AppScreen.dart';
-import 'package:Boilerplate/views/auth/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../AppTheme.dart';

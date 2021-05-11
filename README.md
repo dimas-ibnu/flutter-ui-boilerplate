@@ -5,7 +5,7 @@ Flutter ui boilerplate is easiest way to create new flutter project with clean c
 
 ## Features : 
 - Light & Dark Themes
-- Common UI Screen (Login, Register, Dashboard)
+- Common UI Screen (Login, Register, Dashboard, Detail)
 - Material Design
 - Loading Screen
 - Media Query

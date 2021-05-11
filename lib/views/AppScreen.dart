@@ -5,7 +5,6 @@ import 'package:Boilerplate/views/HomeScreen.dart';
 import 'package:Boilerplate/views/auth/RegisterScreen.dart';
 import 'package:Boilerplate/views/auth/LoginScreen.dart';
 import 'package:Boilerplate/views/MaintenanceScreen.dart';
-import 'package:Boilerplate/views/DetailScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +32,7 @@ class _AppScreenState extends State<AppScreen>
 
   @override
   void initState() {
-    _tabController = new TabController(length: 5, vsync: this, initialIndex: 0);
+    _tabController = new TabController(length: 4, vsync: this, initialIndex: 0);
     _tabController.addListener(_handleTabSelection);
 
     super.initState();
@@ -83,9 +82,10 @@ class _AppScreenState extends State<AppScreen>
                         child: (_currentIndex == 0)
                             ? Column(
                                 mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Icon(
-                                    MdiIcons.viewDashboard,
+                                    MdiIcons.home,
                                     color: themeData.colorScheme.primary,
                                   ),
                                   Container(
@@ -96,12 +96,12 @@ class _AppScreenState extends State<AppScreen>
                                         borderRadius: new BorderRadius.all(
                                             Radius.circular(2.5))),
                                     height: 5,
-                                    width: 15,
+                                    width: 10,
                                   )
                                 ],
                               )
                             : Icon(
-                                MdiIcons.viewDashboardOutline,
+                                MdiIcons.home,
                                 color: themeData.colorScheme.onBackground,
                               ),
                       ),
@@ -111,7 +111,7 @@ class _AppScreenState extends State<AppScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
                                     Icon(
-                                      MdiIcons.account,
+                                      MdiIcons.chat,
                                       color: themeData.colorScheme.primary,
                                     ),
                                     Container(
@@ -121,12 +121,12 @@ class _AppScreenState extends State<AppScreen>
                                           borderRadius: new BorderRadius.all(
                                               Radius.circular(2.5))),
                                       height: 5,
-                                      width: 15,
+                                      width: 10,
                                     )
                                   ],
                                 )
                               : Icon(
-                                  MdiIcons.accountOutline,
+                                  MdiIcons.chat,
                                   color: themeData.colorScheme.onBackground,
                                 )),
                       Container(
@@ -135,7 +135,7 @@ class _AppScreenState extends State<AppScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
                                     Icon(
-                                      MdiIcons.accountPlus,
+                                      MdiIcons.bell,
                                       color: themeData.colorScheme.primary,
                                     ),
                                     Container(
@@ -145,12 +145,12 @@ class _AppScreenState extends State<AppScreen>
                                           borderRadius: new BorderRadius.all(
                                               Radius.circular(2.5))),
                                       height: 5,
-                                      width: 15,
+                                      width: 10,
                                     )
                                   ],
                                 )
                               : Icon(
-                                  MdiIcons.accountPlusOutline,
+                                  MdiIcons.bell,
                                   color: themeData.colorScheme.onBackground,
                                 )),
                       Container(
@@ -159,7 +159,7 @@ class _AppScreenState extends State<AppScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
                                     Icon(
-                                      MdiIcons.noteRemove,
+                                      MdiIcons.cog,
                                       color: themeData.colorScheme.primary,
                                     ),
                                     Container(
@@ -169,38 +169,15 @@ class _AppScreenState extends State<AppScreen>
                                           borderRadius: new BorderRadius.all(
                                               Radius.circular(2.5))),
                                       height: 5,
-                                      width: 15,
+                                      width: 10,
                                     )
                                   ],
                                 )
                               : Icon(
-                                  MdiIcons.noteRemoveOutline,
+                                  MdiIcons.cog,
                                   color: themeData.colorScheme.onBackground,
                                 )),
-                      Container(
-                          child: (_currentIndex == 4)
-                              ? Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    Icon(
-                                      MdiIcons.details,
-                                      color: themeData.colorScheme.primary,
-                                    ),
-                                    Container(
-                                      margin: Spacing.top(4),
-                                      decoration: BoxDecoration(
-                                          color: themeData.primaryColor,
-                                          borderRadius: new BorderRadius.all(
-                                              Radius.circular(2.5))),
-                                      height: 5,
-                                      width: 15,
-                                    )
-                                  ],
-                                )
-                              : Icon(
-                                  MdiIcons.details,
-                                  color: themeData.colorScheme.onBackground,
-                                )),
+                     
                     ],
                   ),
                 )),
@@ -211,7 +188,6 @@ class _AppScreenState extends State<AppScreen>
                 LoginScreen(),
                 RegisterScreen(),
                 MaintenanceScreen(),
-                DetailScreen(),
               ],
             ),
           ),

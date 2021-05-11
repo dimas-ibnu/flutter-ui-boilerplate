@@ -1,6 +1,7 @@
 import 'package:Boilerplate/AppTheme.dart';
 import 'package:Boilerplate/AppThemeNotifier.dart';
 import 'package:Boilerplate/utils/SizeConfig.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,6 +22,28 @@ class _HomeScreenState extends State<HomeScreen> {
 
   //Other Variables
   bool isInProgress = false;
+  int _current = 0;
+
+  List imgCategoryList = [
+    './assets/images/all_categories.png',
+    './assets/images/all_categories.png',
+    './assets/images/all_categories.png',
+    './assets/images/all_categories.png',
+  ];
+
+  List nameCategoryList = [
+    'Galang Dana',
+    'Satu  Hutan ',
+    'Hutan Merdeka',
+    'Rawat Bumi',
+  ];
+
+  List imgNews = [
+    './assets/images/forest.png',
+    './assets/images/forest.png',
+    './assets/images/forest.png',
+    './assets/images/forest.png',
+  ];
 
   @override
   void initState() {
@@ -32,7 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void dispose() {
     super.dispose();
   }
-
 
   Future<void> _refresh() async {
     // _loadHomeData();
@@ -52,21 +74,6 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Scaffold(
                   key: _scaffoldKey,
                   backgroundColor: customAppTheme.bgLayer1,
-                  appBar: PreferredSize(
-                    preferredSize: Size.fromHeight(40.0),
-                    child: AppBar(
-                        backgroundColor: themeData.colorScheme.primary,
-                        elevation: 0,
-                        centerTitle: true,
-                        title: Text("YourApp Name",
-                        style: AppTheme.getTextStyle(
-                                    themeData.textTheme.subtitle1,
-                                    color: themeData.colorScheme.onPrimary,
-                                    fontWeight: 800,)
-                        ),
-                        
-                        ),
-                  ),
                   body: RefreshIndicator(
                     onRefresh: _refresh,
                     backgroundColor: customAppTheme.bgLayer1,
@@ -96,12 +103,225 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _buildBody() {
-      return Container(
-          child: ListView(
+    return Container(
+        padding: Spacing.only(left: 30, top: 20, right: 30),
+        child: ListView(
+          children: [
+            _userProfile(),
+            _sliderBanner(),
+            _categoriesWidget(),
+            _newsWidget(),
+          ],
+        ));
+  }
+
+  _userProfile() {
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          
+          Text("Welcome",
+              style: AppTheme.getTextStyle(themeData.textTheme.headline6,
+                  color: themeData.colorScheme.secondary)),
+          Text(
+            "Chirity Laudia",
+            style: AppTheme.getTextStyle(themeData.textTheme.headline6,
+                color: themeData.colorScheme.primary, fontWeight: 800),
+          ),
         ],
-      ));
+      ),
+      ClipOval(
+        child: Container(
+          decoration: BoxDecoration(
+              color: themeData.colorScheme.primary.withAlpha(20),
+              border: Border.all(width: 1),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  "./assets/images/person.jpg",
+                ),
+              )),
+          height: MySize.size54,
+          width: MySize.size54,
+        ),
+      ),
+    ]);
+  }
+
+  _sliderBanner() {
+    return Column(
+      children: [
+        CarouselSlider(
+            options: CarouselOptions(
+                viewportFraction: 1,
+                enlargeCenterPage: true,
+                scrollDirection: Axis.horizontal,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _current = index;
+                  });
+                }),
+            items: [1, 2, 3, 4].map((i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    margin: Spacing.only(top: 20),
+                    child: Image(
+                      image: AssetImage('./assets/images/banner.png'),
+                    ),
+                  );
+                },
+              );
+            }).toList()),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [1, 2, 3, 4].map((i) {
+            int index = [1, 2, 3, 4].indexOf(i);
+            return Container(
+              width: MySize.size8,
+              height: MySize.size8,
+              margin: Spacing.symmetric(horizontal: 4, vertical: 4),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: _current == index
+                    ? themeData.colorScheme.secondaryVariant
+                    : Colors.grey[400],
+              ),
+            );
+          }).toList(),
+        ),
+      ],
+    );
+  }
+
+  _categoriesWidget() {
+    List<Widget> list = [];
+    for (int i = 0; i <= 3; i++) {
+      list.add(InkWell(onTap: () {}, child: _singleCategory(i)));
+      // list.add(SizedBox(width: MySize.size24));
+    }
+
+    // * Add Show All Categories Menu
+    return Container(
+      padding: Spacing.only(top: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: list,
+      ),
+    );
+  }
+
+  _singleCategory(int index) {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Container(
+            width: MySize.getScaledSizeWidth(65),
+            height: MySize.getScaledSizeWidth(65),
+            decoration: BoxDecoration(
+              color: themeData.colorScheme.primary.withAlpha(20),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Image.asset(
+              imgCategoryList[index],
+              fit: BoxFit.cover,
+            ),
+            padding: Spacing.all(8),
+          ),
+          Container(
+            width: MySize.size76,
+            padding: Spacing.top(8),
+            child: Text(
+              nameCategoryList[index],
+              maxLines: 2,
+              overflow: TextOverflow.clip,
+              textAlign: TextAlign.center,
+              style: AppTheme.getTextStyle(themeData.textTheme.caption,
+                  fontWeight: 600, letterSpacing: 0),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  _newsWidget() {
+    List<Widget> newsList = [];
+    for (int i = 0; i <= 3; i++) {
+      newsList.add(InkWell(onTap: () {}, child: _singleNews(i)));
+    }
+
+    return Container(
+      padding: Spacing.only(top : 20),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Browser",
+                  style: AppTheme.getTextStyle(themeData.textTheme.headline6,
+                      fontWeight: 700, color: themeData.colorScheme.secondary)),
+              InkWell(
+                  onTap: () {},
+                  child: Text("Lihat semua",
+                      style: AppTheme.getTextStyle(themeData.textTheme.caption,
+                          fontWeight: 500,
+                          color: themeData.colorScheme.primary))),
+            ],
+          ),
+          Column(children: newsList)
+        ],
+      ),
+    );
+  }
+
+  _singleNews(int index) {
+    return Stack(children: [
+      Container(
+        height: MySize.getScaledSizeHeight(150),
+        decoration: BoxDecoration(
+            color: themeData.colorScheme.primary.withAlpha(20),
+            borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+                fit: BoxFit.cover, image: AssetImage(imgNews[index]))),
+        margin: Spacing.symmetric(vertical: 10),
+      ),
+      Positioned(
+          bottom: 20.0,
+          left: 10.0,
+          child: SizedBox(
+              width: MySize.getScaledSizeWidth(200),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("100 Trees from Lucy to Indonesia",
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: AppTheme.getTextStyle(
+                          themeData.textTheme.caption,
+                          fontWeight: 700,
+                          color: themeData.colorScheme.onPrimary)),
+                  Text("100 pohon untuk indonesia",
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: AppTheme.getTextStyle(themeData.textTheme.caption,
+                          fontWeight: 500,
+                          color: themeData.colorScheme.onPrimary)),
+                ],
+              ))),
+      Positioned(
+          top: 20.0,
+          right: 10.0,
+          child: SizedBox(
+              width: MySize.getScaledSizeWidth(150  ),
+              child: Text("#SAVEARTH",
+                  textAlign: TextAlign.right,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: AppTheme.getTextStyle(themeData.textTheme.caption,
+                  fontWeight: 800,
+                      color: themeData.colorScheme.onPrimary)))),
+    ]);
   }
 
   // showMessage({String message = "Something wrong", Duration duration}) {
@@ -116,88 +336,6 @@ class _HomeScreenState extends State<HomeScreen> {
   //               letterSpacing: 0.4, color: themeData.colorScheme.onPrimary)),
   //       backgroundColor: themeData.colorScheme.primary,
   //       behavior: SnackBarBehavior.fixed,
-  //     ),
-  //   );
-  // }
-
-  // _categoriesWidget(List<Category> categories) {
-  //   List<Widget> list = [];
-  //   for (Category category in categories) {
-  //     list.add(InkWell(
-  //         onTap: () {
-  //           Navigator.push(
-  //               context,
-  //               MaterialPageRoute(
-  //                   builder: (context) => CategoryProductScreen(
-  //                         category: category,
-  //                       )));
-  //         },
-  //         child: _singleCategory(category)));
-  //     // list.add(SizedBox(width: MySize.size24));
-  //   }
-  //   // * Get only 7 category
-  //   var getCategories = list.take(7);
-  //   list = [];
-  //   for (var category in getCategories) {
-  //     list.add(category);
-  //   }
-  //   // * Add Show All Categories Menu
-  //   list.add(InkWell(
-  //       onTap: () {
-  //         Navigator.push(context,
-  //             MaterialPageRoute(builder: (context) => AllCategoryScreen()));
-  //       },
-  //       child: _showAllCategories()));
-  //   return Container(
-  //     padding: Spacing.fromLTRB(8, 16, 0, 0),
-  //     alignment: Alignment.center,
-  //     child:
-  //         // SingleChildScrollView(
-  //         //   scrollDirection: Axis.horizontal,
-  //         //   child: Row(
-  //         Wrap(
-  //       runAlignment: WrapAlignment.center,
-  //       runSpacing: MySize.size26,
-  //       spacing: MySize.size30,
-  //       children: list,
-  //       // ),
-  //     ),
-  //   );
-  // }
-
-  // _singleCategory(Category category) {
-  //   return Container(
-  //     child: Column(
-  //       children: <Widget>[
-  //         ClipOval(
-  //           child: Container(
-  //             height: MySize.size68,
-  //             width: MySize.size68,
-  //             color: themeData.colorScheme.primary.withAlpha(20),
-  //             child: Center(
-  //               child: Image.network(
-  //                 category.imageUrl,
-  //                 // color: themeData.colorScheme.primary,
-  //                 width: MySize.getScaledSizeWidth(55),
-  //                 height: MySize.getScaledSizeWidth(55),
-  //                 fit: BoxFit.cover,
-  //               ),
-  //             ),
-  //           ),
-  //         ),
-  //         Container(
-  //           width: MySize.size76,
-  //           padding: Spacing.top(8),
-  //           child: Text(
-  //             category.title,
-  //             maxLines: 2,
-  //             overflow: TextOverflow.clip,
-  //             textAlign: TextAlign.center,
-  //             style: AppTheme.getTextStyle(themeData.textTheme.caption,
-  //                 fontWeight: 600, letterSpacing: 0),
-  //           ),
-  //         )
-  //       ],
   //     ),
   //   );
   // }

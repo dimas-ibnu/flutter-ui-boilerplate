@@ -226,7 +226,7 @@ class _HomeScreenState extends State<HomeScreen> {
               imgCategoryList[index],
               fit: BoxFit.cover,
             ),
-            padding: Spacing.all(8),
+            padding: Spacing.all(15),
           ),
           Container(
             width: MySize.size76,

@@ -89,10 +89,9 @@ class _AppScreenState extends State<AppScreen>
                                     color: themeData.colorScheme.primary,
                                   ),
                                   Container(
-                                    
                                     margin: Spacing.top(4),
                                     decoration: BoxDecoration(
-                                        color: themeData.primaryColor,
+                                        color: themeData.colorScheme.primary,
                                         borderRadius: new BorderRadius.all(
                                             Radius.circular(2.5))),
                                     height: 5,

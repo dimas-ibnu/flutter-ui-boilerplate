@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: <Widget>[
                         Container(
                           child: Image.asset(
-                            './assets/images/person.jpg',
+                            './assets/images/logo.png',
                             color: themeData.colorScheme.primary,
                             width: 54,
                             height: 54,
@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Container(
                             margin: Spacing.top(24),
                             child: Text(
-                              "Welcome Back"
+                              "Welcome"
                                   .toUpperCase(),
                               style: AppTheme.getTextStyle(
                                   themeData.textTheme.headline6,
@@ -212,21 +212,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   children: <Widget>[
                                     Align(
                                       alignment: Alignment.center,
-                                      child: Text(
-                                        "Login"
-                                            .toUpperCase(),
-                                        style: AppTheme.getTextStyle(
-                                            themeData.textTheme.bodyText2,
-                                            color:
-                                                themeData.colorScheme.onPrimary,
-                                            letterSpacing: 0.8,
-                                            fontWeight: 700),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      right: 16,
-                                      child: isInProgress
-                                          ? Container(
+                                      child: 
+                                      isInProgress ? Container(
                                               width: MySize.size16,
                                               height: MySize.size16,
                                               child: CircularProgressIndicator(
@@ -236,23 +223,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                                           themeData.colorScheme
                                                               .onPrimary),
                                                   strokeWidth: 1.4),
-                                            )
-                                          : ClipOval(
-                                              child: Container(
-                                                color: themeData
-                                                    .colorScheme.primaryVariant,
-                                                child: SizedBox(
-                                                    width: MySize.size30,
-                                                    height: MySize.size30,
-                                                    child: Icon(
-                                                      MdiIcons.arrowRight,
-                                                      color: themeData
-                                                          .colorScheme
-                                                          .onPrimary,
-                                                      size: MySize.size18,
-                                                    )),
-                                              ),
-                                            ),
+                                            ) : 
+                                      Text(
+                                        "Login"
+                                            .toUpperCase(),
+                                        style: AppTheme.getTextStyle(
+                                            themeData.textTheme.bodyText2,
+                                            color:
+                                                themeData.colorScheme.onPrimary,
+                                            letterSpacing: 0.8,
+                                            fontWeight: 700),
+                                      ),
                                     ),
                                   ],
                                 ),

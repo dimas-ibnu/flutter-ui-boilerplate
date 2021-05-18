@@ -1,8 +1,3 @@
-/*
-* File : App Theme
-* Version : 1.0.0
-* */
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,7 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTheme {
   static final int themeLight = 1;
   static final int themeDark = 2;
-  static final fontFamily = GoogleFonts.ibmPlexSans;
+
+  //Change Font Family Default
+  static final fontFamily = GoogleFonts.poppins;
 
   AppTheme._();
 
@@ -218,9 +215,9 @@ class AppTheme {
         selectedLabelTextStyle: TextStyle(color: Color(0xFF128C7E)),
         unselectedLabelTextStyle: TextStyle(color: Color(0xff495057))),
     colorScheme: ColorScheme.light(
-        primary: Color(0xFF128C7E),
+        primary: Color(0xFF27ae61),
         onPrimary: Colors.white,
-        primaryVariant: Color(0xFF075E54),
+        primaryVariant: Color(0xFF3aa668),
         secondary: Color(0xff495057),
         secondaryVariant: Color(0xff3cd278),
         onSecondary: Colors.white,

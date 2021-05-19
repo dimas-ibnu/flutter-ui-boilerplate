@@ -1,10 +1,12 @@
 import 'package:Boilerplate/utils/SizeConfig.dart';
+import 'package:Boilerplate/views/SelectThemeDialog.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 
 import '../AppTheme.dart';
 import '../AppThemeNotifier.dart';
+import 'AboutAppDialog.dart';
 
 class SettingScreen extends StatefulWidget {
   @override
@@ -99,23 +101,38 @@ class _SettingScreenState extends State<SettingScreen> {
                 children: [
                   Text("Dimas Ibnu Malik",
                       style: AppTheme.getTextStyle(
-                          themeData.textTheme.headline6,
-                          color: themeData.colorScheme.secondary)),
+                        themeData.textTheme.headline6,
+                      )),
                   Text("Flutter Developer",
-                      style: AppTheme.getTextStyle(themeData.textTheme.caption,
-                          fontWeight: 500,
-                          color: themeData.colorScheme.secondary)),
+                      style: AppTheme.getTextStyle(
+                        themeData.textTheme.caption,
+                        fontWeight: 500,
+                      )),
                 ],
               ),
             ],
           ),
         ),
         Divider(),
-        _menuItem(title: "Themes", icon: MdiIcons.lightbulb, onTap: () {}),
+        _menuItem(
+            title: "Themes",
+            icon: MdiIcons.lightbulb,
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) => SelectThemeDialog());
+            }),
         _menuItem(title: "Dashboard", icon: MdiIcons.home, onTap: () {}),
         _menuItem(title: "Login", icon: MdiIcons.account, onTap: () {}),
         _menuItem(title: "Register", icon: MdiIcons.accountPlus, onTap: () {}),
-        _menuItem(title: "About", icon: MdiIcons.frequentlyAskedQuestions, onTap: () {}),
+        _menuItem(
+            title: "About",
+            icon: MdiIcons.frequentlyAskedQuestions,
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) => AboutAppDialog());
+            }),
       ],
     );
   }
@@ -134,9 +151,10 @@ class _SettingScreenState extends State<SettingScreen> {
                 ),
                 SizedBox(width: MySize.size24),
                 Text(title,
-                    style: AppTheme.getTextStyle(themeData.textTheme.subtitle1,
-                        fontWeight: 600,
-                        color: themeData.colorScheme.secondary))
+                    style: AppTheme.getTextStyle(
+                      themeData.textTheme.subtitle1,
+                      fontWeight: 600,
+                    ))
               ],
             )));
   }

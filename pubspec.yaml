@@ -68,10 +68,7 @@ flutter:
 
     #Language JSON files
     - assets/lang/en.json
-    - assets/lang/hi.json
-    - assets/lang/zh.json
-    - assets/lang/es.json
-    - assets/lang/fr.json
+
 
     #Placeholder Images
     - assets/images/placeholder/no-image.png

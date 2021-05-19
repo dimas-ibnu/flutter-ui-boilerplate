@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: AppTheme.getTextStyle(themeData.textTheme.headline6,
                   color: themeData.colorScheme.secondary)),
           Text(
-            "Chirity Laudia",
+            "Dimas Ibnu Malik",
             style: AppTheme.getTextStyle(themeData.textTheme.headline6,
                 color: themeData.colorScheme.primary, fontWeight: 800),
           ),
@@ -265,7 +265,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () {},
                   child: Text("Lihat semua",
                       style: AppTheme.getTextStyle(themeData.textTheme.caption,
-                          fontWeight: 500,
+                          fontWeight: 700,
                           color: themeData.colorScheme.primary))),
             ],
           ),

@@ -81,7 +81,6 @@ flutter:
     - assets/images/person.jpg
     - assets/images/banner.png
     - assets/images/forest.png
-    - assets/images/maintenance.png
 
     #Images - Categories
     - assets/images/categories/double_tree.png

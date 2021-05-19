@@ -2,9 +2,9 @@ import 'package:Boilerplate/AppTheme.dart';
 import 'package:Boilerplate/AppThemeNotifier.dart';
 import 'package:Boilerplate/utils/SizeConfig.dart';
 import 'package:Boilerplate/views/HomeScreen.dart';
+import 'package:Boilerplate/views/SettingScreen.dart';
 import 'package:Boilerplate/views/auth/RegisterScreen.dart';
 import 'package:Boilerplate/views/auth/LoginScreen.dart';
-import 'package:Boilerplate/views/MaintenanceScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -116,7 +116,7 @@ class _AppScreenState extends State<AppScreen>
                                     Container(
                                       margin: Spacing.top(4),
                                       decoration: BoxDecoration(
-                                          color: themeData.primaryColor,
+                                          color: themeData.colorScheme.primary,
                                           borderRadius: new BorderRadius.all(
                                               Radius.circular(2.5))),
                                       height: 5,
@@ -140,7 +140,7 @@ class _AppScreenState extends State<AppScreen>
                                     Container(
                                       margin: Spacing.top(4),
                                       decoration: BoxDecoration(
-                                          color: themeData.primaryColor,
+                                          color: themeData.colorScheme.primary,
                                           borderRadius: new BorderRadius.all(
                                               Radius.circular(2.5))),
                                       height: 5,
@@ -164,7 +164,7 @@ class _AppScreenState extends State<AppScreen>
                                     Container(
                                       margin: Spacing.top(4),
                                       decoration: BoxDecoration(
-                                          color: themeData.primaryColor,
+                                          color: themeData.colorScheme.primary,
                                           borderRadius: new BorderRadius.all(
                                               Radius.circular(2.5))),
                                       height: 5,
@@ -186,7 +186,7 @@ class _AppScreenState extends State<AppScreen>
                 HomeScreen(),
                 LoginScreen(),
                 RegisterScreen(),
-                MaintenanceScreen(),
+                SettingScreen()
               ],
             ),
           ),

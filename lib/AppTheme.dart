@@ -193,7 +193,7 @@ class AppTheme {
   //Color Themes
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    primaryColor: Color(0xFF128C7E),
+    primaryColor: Color(0xFF27ae61),
     canvasColor: Colors.transparent,
     backgroundColor: Colors.white,
     scaffoldBackgroundColor: Color(0xffffffff),
@@ -207,12 +207,12 @@ class AppTheme {
     ),
     navigationRailTheme: NavigationRailThemeData(
         selectedIconTheme:
-            IconThemeData(color: Color(0xFF128C7E), opacity: 1, size: 24),
+            IconThemeData(color: Color(0xFF27ae61), opacity: 1, size: 24),
         unselectedIconTheme:
             IconThemeData(color: Color(0xff495057), opacity: 1, size: 24),
         backgroundColor: Color(0xffffffff),
         elevation: 3,
-        selectedLabelTextStyle: TextStyle(color: Color(0xFF128C7E)),
+        selectedLabelTextStyle: TextStyle(color: Color(0xFF27ae61)),
         unselectedLabelTextStyle: TextStyle(color: Color(0xff495057))),
     colorScheme: ColorScheme.light(
         primary: Color(0xFF27ae61),
@@ -234,7 +234,7 @@ class AppTheme {
       hintStyle: TextStyle(fontSize: 15, color: Color(0xaa495057)),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4)),
-        borderSide: BorderSide(width: 1, color: Color(0xFF128C7E)),
+        borderSide: BorderSide(width: 1, color: Color(0xFF27ae61)),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -253,17 +253,17 @@ class AppTheme {
     disabledColor: Color(0xffdcc7ff),
     highlightColor: Colors.white,
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: Color(0xFF128C7E),
+        backgroundColor: Color(0xFF27ae61),
         splashColor: Colors.white.withAlpha(100),
         highlightElevation: 8,
         elevation: 4,
-        focusColor: Color(0xFF128C7E),
-        hoverColor: Color(0xFF128C7E),
+        focusColor: Color(0xFF27ae61),
+        hoverColor: Color(0xFF27ae61),
         foregroundColor: Colors.white),
     dividerColor: Color(0xffd1d1d1),
     errorColor: Color(0xfff0323c),
     cardColor: Colors.white,
-    accentColor: Color(0xFF128C7E),
+    accentColor: Color(0xFF27ae61),
     popupMenuTheme: PopupMenuThemeData(
       color: Color(0xffffffff),
       textStyle:
@@ -273,18 +273,18 @@ class AppTheme {
         BottomAppBarTheme(color: Color(0xffffffff), elevation: 2),
     tabBarTheme: TabBarTheme(
       unselectedLabelColor: Color(0xff495057),
-      labelColor: Color(0xFF128C7E),
+      labelColor: Color(0xFF27ae61),
       indicatorSize: TabBarIndicatorSize.label,
       indicator: UnderlineTabIndicator(
-        borderSide: BorderSide(color: Color(0xFF128C7E), width: 2.0),
+        borderSide: BorderSide(color: Color(0xFF27ae61), width: 2.0),
       ),
     ),
     sliderTheme: SliderThemeData(
-      activeTrackColor: Color(0xFF128C7E),
-      inactiveTrackColor: Color(0xFF128C7E).withAlpha(140),
+      activeTrackColor: Color(0xFF27ae61),
+      inactiveTrackColor: Color(0xFF27ae61).withAlpha(140),
       trackShape: RoundedRectSliderTrackShape(),
       trackHeight: 4.0,
-      thumbColor: Color(0xFF128C7E),
+      thumbColor: Color(0xFF27ae61),
       thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10.0),
       overlayShape: RoundSliderOverlayShape(overlayRadius: 24.0),
       tickMarkShape: RoundSliderTickMarkShape(),
@@ -295,10 +295,13 @@ class AppTheme {
       ),
     ),
   );
+
+
+  //Dark Theme Color Setting
   static ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
       canvasColor: Colors.transparent,
-      primaryColor: Color(0xFF128C7E),
+      primaryColor: Color(0xFF27ae61),
       scaffoldBackgroundColor: Color(0xff464c52),
       backgroundColor: Color(0xff464c52),
       appBarTheme: AppBarTheme(
@@ -310,8 +313,8 @@ class AppTheme {
         iconTheme: IconThemeData(color: Color(0xffffffff), size: 24),
       ),
       colorScheme: ColorScheme.dark(
-        primary: Color(0xFF128C7E),
-        primaryVariant: Color(0xFF128C7E),
+        primary: Color(0xFF27ae61),
+        primaryVariant: Color(0xFF27ae61),
         secondary: Color(0xff00cc77),
         secondaryVariant: Color(0xff00cc77),
         background: Color(0xff343a40),
@@ -336,7 +339,7 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
-          borderSide: BorderSide(width: 1, color: Color(0xFF128C7E)),
+          borderSide: BorderSide(width: 1, color: Color(0xFF27ae61)),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -351,14 +354,14 @@ class AppTheme {
       cardColor: Color(0xff282a2b),
       splashColor: Colors.white.withAlpha(100),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Color(0xFF128C7E),
+          backgroundColor: Color(0xFF27ae61),
           splashColor: Colors.white.withAlpha(100),
           highlightElevation: 8,
           elevation: 4,
-          focusColor: Color(0xFF128C7E),
-          hoverColor: Color(0xFF128C7E),
+          focusColor: Color(0xFF27ae61),
+          hoverColor: Color(0xFF27ae61),
           foregroundColor: Colors.white),
-      accentColor: Color(0xFF128C7E),
+      accentColor: Color(0xFF27ae61),
       popupMenuTheme: PopupMenuThemeData(
         color: Color(0xff37404a),
         textStyle:
@@ -368,18 +371,18 @@ class AppTheme {
           BottomAppBarTheme(color: Color(0xff464c52), elevation: 2),
       tabBarTheme: TabBarTheme(
         unselectedLabelColor: Color(0xff495057),
-        labelColor: Color(0xFF128C7E),
+        labelColor: Color(0xFF27ae61),
         indicatorSize: TabBarIndicatorSize.label,
         indicator: UnderlineTabIndicator(
-          borderSide: BorderSide(color: Color(0xFF128C7E), width: 2.0),
+          borderSide: BorderSide(color: Color(0xFF27ae61), width: 2.0),
         ),
       ),
       sliderTheme: SliderThemeData(
-        activeTrackColor: Color(0xFF128C7E),
-        inactiveTrackColor: Color(0xFF128C7E).withAlpha(100),
+        activeTrackColor: Color(0xFF27ae61),
+        inactiveTrackColor: Color(0xFF27ae61).withAlpha(100),
         trackShape: RoundedRectSliderTrackShape(),
         trackHeight: 4.0,
-        thumbColor: Color(0xFF128C7E),
+        thumbColor: Color(0xFF27ae61),
         thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10.0),
         overlayShape: RoundSliderOverlayShape(overlayRadius: 24.0),
         tickMarkShape: RoundSliderTickMarkShape(),
@@ -404,7 +407,7 @@ class AppTheme {
     NavigationBarTheme navigationBarTheme = NavigationBarTheme();
     if (themeMode == themeLight) {
       navigationBarTheme.backgroundColor = Colors.white;
-      navigationBarTheme.selectedItemColor = Color(0xFF128C7E);
+      navigationBarTheme.selectedItemColor = Color(0xFF27ae61);
       navigationBarTheme.unselectedItemColor = Color(0xff495057);
       navigationBarTheme.selectedOverlayColor = Color(0x383d63ff);
     } else if (themeMode == themeDark) {

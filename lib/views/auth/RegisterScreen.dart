@@ -84,7 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           child: Container(
                             margin: Spacing.top(24),
                             child: Text(
-                              "Create Account".toUpperCase(),
+                              "Create New Account".toUpperCase(),
                               style: AppTheme.getTextStyle(
                                   themeData.textTheme.headline6,
                                   color: themeData.colorScheme.onBackground,

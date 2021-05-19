@@ -1,6 +1,7 @@
 import 'package:Boilerplate/AppTheme.dart';
 import 'package:Boilerplate/AppThemeNotifier.dart';
 import 'package:Boilerplate/utils/SizeConfig.dart';
+import 'package:Boilerplate/views/SettingScreen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   //Global Keys
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
       new GlobalKey<RefreshIndicatorState>();
 
@@ -104,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _buildBody() {
     return Container(
-        padding: Spacing.only(left: 30, top: 20, right: 30),
+        padding: Spacing.only(left: 20, top: 20, right: 20),
         child: ListView(
           children: [
             _userProfile(),
@@ -122,29 +124,34 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Text("Welcome",
               style: AppTheme.getTextStyle(themeData.textTheme.headline6,
-                  color: themeData.colorScheme.secondary)),
+                 )),
           Text(
             "Dimas Ibnu Malik",
             style: AppTheme.getTextStyle(themeData.textTheme.headline6,
-                color: themeData.colorScheme.primary, fontWeight: 800),
+                color: themeData.colorScheme.primary, fontWeight: 700),
           ),
         ],
       ),
-      ClipOval(
-        child: Container(
-          decoration: BoxDecoration(
-              color: themeData.colorScheme.primary.withAlpha(20),
-              border: Border.all(width: 1),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(
-                  "./assets/images/person.jpg",
-                ),
-              )),
-          height: MySize.size54,
-          width: MySize.size54,
+      InkWell(
+        onTap: () {
+        
+        },
+        child: ClipOval(
+          child: Container(
+            decoration: BoxDecoration(
+                color: themeData.colorScheme.primary.withAlpha(20),
+                border: Border.all(width: 1),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    "./assets/images/person.jpg",
+                  ),
+                )),
+            height: MySize.size54,
+            width: MySize.size54,
+          ),
         ),
-      ),
+      )
     ]);
   }
 
@@ -165,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
               return Builder(
                 builder: (BuildContext context) {
                   return Container(
-                    margin: Spacing.only(top: 20),
+                    margin: Spacing.only(top: 10),
                     child: Image(
                       image: AssetImage('./assets/images/banner.png'),
                     ),
@@ -203,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     // * Add Show All Categories Menu
     return Container(
-      padding: Spacing.only(top: 20),
+      padding: Spacing.only(top: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: list,
@@ -327,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Container(
             width: MySize.getScaledSizeWidth(30),
             height: MySize.getScaledSizeWidth(30),
-              color: themeData.colorScheme.onPrimary,
+            color: themeData.colorScheme.onPrimary,
             child: Image.asset(
               imgCategoryList[index],
               fit: BoxFit.cover,

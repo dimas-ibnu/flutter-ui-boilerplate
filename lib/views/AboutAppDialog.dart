@@ -74,6 +74,7 @@ class _AboutAppDialogState extends State<AboutAppDialog> {
                             child: Container(
                               padding: Spacing.all(20),
                               child: Text(appDescription,
+                              textAlign: TextAlign.justify,
                                   style: AppTheme.getTextStyle(
                                     themeData.textTheme.caption,
                                   )),

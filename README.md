@@ -10,10 +10,10 @@ Flutter ui boilerplate is easiest way to create new flutter project with clean c
 - Loading Screen
 - Media Query
 
-# Light Theme
+# Dark Theme
 ![alt text](https://github.com/dimas-ibnu/flutter-ui-boilerplate/blob/master/screenshot/DARK%20THEME/dashboard.png?raw=true")
 
-# Dark Theme
+# Light Theme
 ![alt text](https://github.com/dimas-ibnu/flutter-ui-boilerplate/blob/master/screenshot/LIGHT%20THEME/dashboard.png?raw=true")
 
 

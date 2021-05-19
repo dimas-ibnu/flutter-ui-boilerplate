@@ -45,46 +45,11 @@ class _SelectThemeDialogState extends State<SelectThemeDialog> {
                           value: AppTheme.themeLight,
                           activeColor: themeData.colorScheme.primary,
                         ),
-                        Text("Light Theme",
+                        Text("Light",
                             style: AppTheme.getTextStyle(
                                 themeData.textTheme.subtitle2,
                                 fontWeight: 600)),
-                        Container(
-                          margin: Spacing.left(16),
-                          width: MySize.size22,
-                          height: MySize.size22,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: themeData.colorScheme.onBackground,
-                                  width: 1),
-                              color: AppTheme.lightTheme.backgroundColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(11))),
-                        ),
-                        Container(
-                          margin: Spacing.left(8),
-                          width: MySize.size22,
-                          height: MySize.size22,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: themeData.colorScheme.onBackground,
-                                  width: 1),
-                              color: AppTheme.lightTheme.colorScheme.primary,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(11))),
-                        ),
-                        Container(
-                          margin: Spacing.left(8),
-                          width: MySize.size22,
-                          height: MySize.size22,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: themeData.colorScheme.onBackground,
-                                  width: 1),
-                              color: AppTheme.lightTheme.colorScheme.secondary,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(11))),
-                        ),
+                        
                       ],
                     ),
                   ),
@@ -105,58 +70,15 @@ class _SelectThemeDialogState extends State<SelectThemeDialog> {
                           value: AppTheme.themeDark,
                           activeColor: themeData.colorScheme.secondary,
                         ),
-                        Text("Dark Theme",
+                        Text("Dark",
                             style: AppTheme.getTextStyle(
                                 themeData.textTheme.subtitle2,
                                 fontWeight: 600)),
-                        Container(
-                          margin: Spacing.left(16),
-                          width: MySize.size22,
-                          height: MySize.size22,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: themeData.colorScheme.onBackground,
-                                  width: 1),
-                              color: AppTheme.darkTheme.backgroundColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(11))),
-                        ),
-                        Container(
-                          margin: Spacing.left(8),
-                          width: MySize.size22,
-                          height: MySize.size22,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: themeData.colorScheme.onBackground,
-                                  width: 1),
-                              color: AppTheme.darkTheme.colorScheme.primary,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(11))),
-                        ),
-                        Container(
-                          margin: Spacing.left(8),
-                          width: MySize.size22,
-                          height: MySize.size22,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: themeData.colorScheme.onBackground,
-                                  width: 1),
-                              color: AppTheme.darkTheme.colorScheme.secondary,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(11))),
-                        ),
+                        
                       ],
                     ),
                   ),
                 ),
-                Container(
-                  margin: Spacing.top(8),
-                  child: Text(
-                    "More themes are coming soon...",
-                    style: AppTheme.getTextStyle(themeData.textTheme.bodyText2,
-                        fontWeight: 600),
-                  ),
-                )
               ],
             ),
           ),

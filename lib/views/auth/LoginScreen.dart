@@ -1,10 +1,13 @@
 import 'package:Boilerplate/AppTheme.dart';
 import 'package:Boilerplate/AppThemeNotifier.dart';
 import 'package:Boilerplate/utils/SizeConfig.dart';
+import 'package:Boilerplate/utils/Validator.dart';
 import 'package:Boilerplate/views/auth/RegisterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
+
+import '../AppScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -38,7 +41,6 @@ class _LoginScreenState extends State<LoginScreen> {
     passwordTFController = TextEditingController(text: "");
   }
 
-
   @override
   void dispose() {
     emailTFController.dispose();
@@ -52,6 +54,32 @@ class _LoginScreenState extends State<LoginScreen> {
           Radius.circular(8),
         ),
         borderSide: BorderSide(color: customAppTheme.bgLayer4, width: 1.5));
+  }
+
+  login() async {
+    String email = emailTFController.text;
+    String password = passwordTFController.text;
+
+    if (email.isEmpty) {
+      showMessage(message: "Please Fill Email");
+    } else if (Validator.isEmail(email)) {
+      showMessage(message: "Please fill email properly");
+    } else if (password.isEmpty) {
+      showMessage(message: "Please fill password");
+    } else {
+      setState(() {
+        isInProgress = true;
+      });
+
+      await Future.delayed(Duration(seconds: 1), () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) => AppScreen(),
+          ),
+        );
+      });
+    }
   }
 
   @override
@@ -84,8 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Container(
                             margin: Spacing.top(24),
                             child: Text(
-                              "Welcome"
-                                  .toUpperCase(),
+                              "Welcome".toUpperCase(),
                               style: AppTheme.getTextStyle(
                                   themeData.textTheme.headline6,
                                   color: themeData.colorScheme.onBackground,
@@ -153,8 +180,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 },
                                 child: Icon(
                                   showPassword
-                                      ? MdiIcons.eyeOutline
-                                      : MdiIcons.eyeOffOutline,
+                                      ? MdiIcons.eyeOffOutline
+                                      : MdiIcons.eyeOutline,
                                   size: MySize.size22,
                                 ),
                               ),
@@ -169,11 +196,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           margin: Spacing.fromLTRB(24, 8, 24, 0),
                           alignment: Alignment.centerRight,
                           child: GestureDetector(
-                            onTap: () {
-                             
-                            },
+                            onTap: () {},
                             child: Text(
-                             "Forgot Password",
+                              "Forgot Password",
                               style: AppTheme.getTextStyle(
                                   themeData.textTheme.bodyText2,
                                   fontWeight: 500),
@@ -203,37 +228,34 @@ class _LoginScreenState extends State<LoginScreen> {
                                 highlightColor: themeData.colorScheme.primary,
                                 splashColor: Colors.white.withAlpha(100),
                                 padding: Spacing.only(top: 16, bottom: 16),
-                                onPressed: () {
-                         
-                                },
+                                onPressed: isInProgress ? () {} : () => login(),
                                 child: Stack(
                                   overflow: Overflow.visible,
                                   alignment: Alignment.center,
                                   children: <Widget>[
                                     Align(
                                       alignment: Alignment.center,
-                                      child: 
-                                      isInProgress ? Container(
-                                              width: MySize.size16,
-                                              height: MySize.size16,
+                                      child: isInProgress
+                                          ? Container(
+                                              width: MySize.size20,
+                                              height: MySize.size20,
                                               child: CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                              Color>(
-                                                          themeData.colorScheme
-                                                              .onPrimary),
-                                                  strokeWidth: 1.4),
-                                            ) : 
-                                      Text(
-                                        "Login"
-                                            .toUpperCase(),
-                                        style: AppTheme.getTextStyle(
-                                            themeData.textTheme.bodyText2,
-                                            color:
-                                                themeData.colorScheme.onPrimary,
-                                            letterSpacing: 0.8,
-                                            fontWeight: 700),
-                                      ),
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                            Color>(
+                                                        themeData.colorScheme
+                                                            .onPrimary),
+                                              ),
+                                            )
+                                          : Text(
+                                              "Login".toUpperCase(),
+                                              style: AppTheme.getTextStyle(
+                                                  themeData.textTheme.bodyText2,
+                                                  color: themeData
+                                                      .colorScheme.onPrimary,
+                                                  letterSpacing: 0.8,
+                                                  fontWeight: 700),
+                                            ),
                                     ),
                                   ],
                                 ),
@@ -251,7 +273,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             RegisterScreen()));
                               },
                               child: Text(
-                               "I have not an account",
+                                "I have not an account",
                                 style: AppTheme.getTextStyle(
                                     themeData.textTheme.bodyText2,
                                     color: themeData.colorScheme.onBackground,

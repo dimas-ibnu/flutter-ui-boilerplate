@@ -4,235 +4,30 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:shimmer/shimmer.dart';
 
-//----------------------- Loading Screens  (Shimmer Effects) ---------------------------//
-
+// Loading Screens
 class LoadingScreens {
-  static Widget getSearchLoadingScreen(
-      BuildContext context, ThemeData themeData, CustomAppTheme customAppTheme,
-      {int itemCount = 4}) {
-    Widget singleLoading = Shimmer.fromColors(
-        baseColor: customAppTheme.shimmerBaseColor,
-        highlightColor: customAppTheme.shimmerHighlightColor,
-        child: Container(
-          height: 96,
-          padding: Spacing.all(16),
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.grey),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Container(
-                height: 56,
-                width: 56,
-                color: Colors.grey,
-              ),
-              Expanded(
-                child: Container(
-                  height: 56,
-                  padding: Spacing.only(left: 8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            flex: 2,
-                            child: Container(
-                              alignment: Alignment.topLeft,
-                              height: 8,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                              child: Icon(
-                                MdiIcons.heart,
-                                color: themeData.colorScheme.onBackground,
-                                size: MySize.size24,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            flex: 2,
-                            child: Container(
-                              child: Container(
-                                height: 8,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            flex: 2,
-                            child: Container(
-                              child: Container(
-                                height: 8,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                              child: Container(
-                                  height: 8, width: 36, color: Colors.grey),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ));
+  static Widget getHomeLoading(BuildContext context, ThemeData themeData,
+      CustomAppTheme customAppTheme) {
 
-    List<Widget> list = [];
-    for (int i = 0; i < itemCount; i++) {
-      list.add(Container(
-          padding: Spacing.fromLTRB(16, 8, 16, 8), child: singleLoading));
+        
+    List<Widget> listCategory = [];
+    for (int i = 0; i < 4; i++) {
+      listCategory.add(Padding(
+          child: boxShimmer(width: MySize.size72, height: MySize.size72),
+          padding: Spacing.all(5)));
     }
-    return ListView(
-      children: list,
-    );
-  }
 
-  static Widget getFavouriteLoadingScreen(
-      BuildContext context, ThemeData themeData, CustomAppTheme customAppTheme,
-      {int itemCount = 4}) {
-    Widget singleLoading = Shimmer.fromColors(
-        baseColor: customAppTheme.shimmerBaseColor,
-        highlightColor: customAppTheme.shimmerHighlightColor,
-        child: Container(
-          height: 96,
-          padding: Spacing.all(16),
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.grey),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Container(
-                height: 56,
-                width: 56,
-                color: Colors.grey,
-              ),
-              Expanded(
-                child: Container(
-                  height: 56,
-                  padding: Spacing.only(left: 8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            flex: 2,
-                            child: Container(
-                              alignment: Alignment.topLeft,
-                              height: 8,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                              child: Icon(
-                                MdiIcons.heart,
-                                color: themeData.colorScheme.onBackground,
-                                size: MySize.size24,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            flex: 2,
-                            child: Container(
-                              child: Container(
-                                height: 8,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            flex: 2,
-                            child: Container(
-                              child: Container(
-                                height: 8,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                              child: Container(
-                                  height: 8, width: 36, color: Colors.grey),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ));
-
-    List<Widget> list = [];
-    for (int i = 0; i < itemCount; i++) {
-      list.add(Container(
-          padding: Spacing.fromLTRB(16, 8, 16, 8), child: singleLoading));
+    List<Widget> listNewsItem = [];
+    for (int i = 0; i < 4; i++) {
+      listNewsItem.add(Padding(
+        padding: Spacing.vertical(10),
+        child:
+      boxShimmer(
+          height: MediaQuery.of(context).size.width * 0.3,
+          width: MediaQuery.of(context).size.width * 1)
+      ));
     }
-    return Column(
-      children: list,
-    );
-  }
 
-  static Widget getProductLoadingScreen(BuildContext context,
-      ThemeData themeData, CustomAppTheme customAppTheme) {
     return Shimmer.fromColors(
       baseColor: customAppTheme.shimmerBaseColor,
       highlightColor: customAppTheme.shimmerHighlightColor,
@@ -240,43 +35,37 @@ class LoadingScreens {
         padding: Spacing.all(24),
         child: ListView(
           children: <Widget>[
-            Container(
-              height: MediaQuery.of(context).size.width * 0.5,
-              width: MediaQuery.of(context).size.width * 0.5,
-              color: Colors.grey,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    boxShimmer(width: MySize.size160, height: MySize.size20),
+                    SizedBox(height: 5),
+                    boxShimmer(width: MySize.size200, height: MySize.size20)
+                  ],
+                ),
+                SizedBox(height: 20),
+                circleShimmer(size: MySize.size50)
+              ],
             ),
             SizedBox(
               height: 16,
             ),
-            Container(
-              height: 90,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(4),
-                border: Border.all(color: Colors.grey),
-              ),
+            boxShimmer(
+                height: MediaQuery.of(context).size.width * 0.4,
+                width: MediaQuery.of(context).size.width * 0.5),
+            SizedBox(
+              height: 16,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: listCategory,
             ),
             SizedBox(height: 16),
-            Container(
-              height: 120,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(4),
-                border: Border.all(color: Colors.grey),
-              ),
-            ),
-            SizedBox(height: 16),
-            Container(
-              height: 220,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(4),
-                border: Border.all(color: Colors.grey),
-              ),
-            ),
+
+            Column(children: listNewsItem)
           ],
         ),
       ),
@@ -810,5 +599,27 @@ class LoadingScreens {
           color: Colors.grey,
         ));
     return singleLoading;
+  }
+
+  static Widget boxShimmer({double height, double width}) {
+    return Container(
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.grey,
+      ),
+    );
+  }
+
+  static Widget circleShimmer({double height, double size}) {
+    return Container(
+      height: size,
+      width: size,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.grey,
+      ),
+    );
   }
 }

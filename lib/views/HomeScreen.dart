@@ -1,7 +1,7 @@
 import 'package:Boilerplate/AppTheme.dart';
 import 'package:Boilerplate/AppThemeNotifier.dart';
 import 'package:Boilerplate/utils/SizeConfig.dart';
-import 'package:Boilerplate/views/SettingScreen.dart';
+import 'package:Boilerplate/views/LoadingScreens.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // _loadHomeData();
+    _loadHomeData();
   }
 
   @override
@@ -58,8 +58,24 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
+  _loadHomeData() async {
+    if (mounted) {
+      setState(() {
+        isInProgress = true;
+      });
+    }
+
+    await Future.delayed(Duration(seconds: 1), () {
+      if (mounted) {
+        setState(() {
+          isInProgress = false;
+        });
+      }
+    });
+  }
+
   Future<void> _refresh() async {
-    // _loadHomeData();
+    _loadHomeData();
   }
 
   @override
@@ -105,16 +121,20 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _buildBody() {
-    return Container(
-        padding: Spacing.only(left: 20, top: 20, right: 20),
-        child: ListView(
-          children: [
-            _userProfile(),
-            _sliderBanner(),
-            _categoriesWidget(),
-            _newsWidget(),
-          ],
-        ));
+    if (isInProgress) {
+      return LoadingScreens.getHomeLoading(context, themeData, customAppTheme);
+    } else if (!isInProgress) {
+      return Container(
+          padding: Spacing.only(left: 20, top: 20, right: 20),
+          child: ListView(
+            children: [
+              _userProfile(),
+              _sliderBanner(),
+              _categoriesWidget(),
+              _newsWidget(),
+            ],
+          ));
+    }
   }
 
   _userProfile() {
@@ -123,8 +143,9 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Welcome",
-              style: AppTheme.getTextStyle(themeData.textTheme.headline6,
-                 )),
+              style: AppTheme.getTextStyle(
+                themeData.textTheme.headline6,
+              )),
           Text(
             "Dimas Ibnu Malik",
             style: AppTheme.getTextStyle(themeData.textTheme.headline6,
@@ -133,9 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       InkWell(
-        onTap: () {
-        
-        },
+        onTap: () {},
         child: ClipOval(
           child: Container(
             decoration: BoxDecoration(

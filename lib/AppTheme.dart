@@ -74,7 +74,7 @@ class AppTheme {
         wordSpacing: wordSpacing);
   }
 
-  //App Bar Text
+  //TODO :CHANGE APPBAR THEME (LIGHT SCHEME)
   static final TextTheme lightAppBarTextTheme = TextTheme(
     headline1: fontFamily(
         textStyle: TextStyle(fontSize: 102, color: Color(0xff495057))),
@@ -103,6 +103,9 @@ class AppTheme {
     overline: fontFamily(
         textStyle: TextStyle(fontSize: 11, color: Color(0xff495057))),
   );
+
+
+  //TODO :CHANGE APPBAR THEME (DARK SCHEME)
   static final TextTheme darkAppBarTextTheme = TextTheme(
     headline1: fontFamily(
         textStyle: TextStyle(fontSize: 102, color: Color(0xffffffff))),
@@ -132,7 +135,7 @@ class AppTheme {
         textStyle: TextStyle(fontSize: 11, color: Color(0xffffffff))),
   );
 
-  //Text Themes
+  //TODO :CHANGE TEXT THEME (LIGHT SCHEME)
   static final TextTheme lightTextTheme = TextTheme(
     headline1: fontFamily(
         textStyle: TextStyle(fontSize: 102, color: Color(0xff4a4c4f))),
@@ -161,6 +164,9 @@ class AppTheme {
     overline: fontFamily(
         textStyle: TextStyle(fontSize: 11, color: Color(0xff4a4c4f))),
   );
+
+  
+  //TODO :CHANGE TEXT THEME (DARK SCHEME)
   static final TextTheme darkTextTheme = TextTheme(
     headline1: fontFamily(
         textStyle: TextStyle(fontSize: 102, color: Colors.white)),
@@ -190,7 +196,7 @@ class AppTheme {
         textStyle: TextStyle(fontSize: 11, color: Colors.white)),
   );
 
-  //Color Themes
+  //TODO: CHANGE LIGHT THEME COLOR SCHEME
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: Color(0xFF27ae61),
@@ -296,8 +302,7 @@ class AppTheme {
     ),
   );
 
-
-  //Dark Theme Color Setting
+  //TODO: CHANGE DARK THEME COLOR SCHEME
   static ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
       canvasColor: Colors.transparent,
@@ -499,7 +504,7 @@ class CustomAppTheme {
     this.onSuccess = const Color(0xffffffff),
     this.colorError = const Color(0xfff0323c),
     this.onError = const Color(0xffffffff),
-    this.shimmerBaseColor = const Color(0xFFF5F5F5),
+    this.shimmerBaseColor = const Color(0xffdcc7ff),
     this.shimmerHighlightColor = const Color(0xFFE0E0E0),
   });
 }

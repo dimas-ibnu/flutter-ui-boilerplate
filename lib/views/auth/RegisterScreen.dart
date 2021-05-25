@@ -1,6 +1,7 @@
 import 'package:Boilerplate/AppTheme.dart';
 import 'package:Boilerplate/AppThemeNotifier.dart';
 import 'package:Boilerplate/utils/SizeConfig.dart';
+import 'package:Boilerplate/utils/Validator.dart';
 import 'package:Boilerplate/views/auth/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -26,6 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   //Other Variables
   bool showPassword = false;
+  bool isInProgress = false;
 
   //UI Variables
   OutlineInputBorder allTFBorder;
@@ -54,6 +56,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
         borderSide: BorderSide(color: customAppTheme.bgLayer4, width: 1.5));
   }
 
+  _handleRegister() async {
+    String email = emailTFController.text;
+    String password = passwordTFController.text;
+
+    // if (email.isEmpty) {
+    //   showMessage(message: "Please Fill Email");
+    // } else if (Validator.isEmail(email)) {
+    //   showMessage(message: "Please fill email properly");
+    // } else if (password.isEmpty) {
+    //   showMessage(message: "Please fill password");
+    // } else {
+    setState(() {
+      isInProgress = true;
+    });
+
+    await Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => LoginScreen(),
+        ),
+      );
+    });
+    // }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<AppThemeNotifier>(
@@ -66,6 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             debugShowCheckedModeBanner: false,
             theme: AppTheme.getThemeFromThemeMode(themeType),
             home: Scaffold(
+                resizeToAvoidBottomInset: false,
                 key: _scaffoldKey,
                 body: Container(
                     color: customAppTheme.bgLayer1,
@@ -221,18 +250,31 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   alignment: Alignment.center,
                                   children: <Widget>[
                                     Align(
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        "Create"
-                                            .toUpperCase(),
-                                        style: AppTheme.getTextStyle(
-                                            themeData.textTheme.bodyText2,
-                                            color:
-                                                themeData.colorScheme.onPrimary,
-                                            letterSpacing: 0.8,
-                                            fontWeight: 700),
-                                      ),
-                                    ),
+                                        alignment: Alignment.center,
+                                        child: !isInProgress
+                                            ? Text(
+                                                "Create".toUpperCase(),
+                                                style: AppTheme.getTextStyle(
+                                                    themeData
+                                                        .textTheme.bodyText2,
+                                                    color: themeData
+                                                        .colorScheme.onPrimary,
+                                                    letterSpacing: 0.8,
+                                                    fontWeight: 700),
+                                              )
+                                            : Container(
+                                                width: MySize.size20,
+                                                height: MySize.size20,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                              Color>(
+                                                          themeData.colorScheme
+                                                              .onPrimary),
+                                                ),
+                                              )),
+
                                     // Positioned(
                                     //   right: 16,
                                     //   child: isInProgress
@@ -279,7 +321,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         builder: (context) => LoginScreen()));
                               },
                               child: Text(
-                               "I have already an account",
+                                "I have already an account",
                                 style: AppTheme.getTextStyle(
                                     themeData.textTheme.bodyText2,
                                     color: themeData.colorScheme.onBackground,

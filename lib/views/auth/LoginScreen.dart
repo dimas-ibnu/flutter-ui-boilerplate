@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
         borderSide: BorderSide(color: customAppTheme.bgLayer4, width: 1.5));
   }
 
-  login() async {
+  _handleLogin() async {
     String email = emailTFController.text;
     String password = passwordTFController.text;
 
@@ -67,11 +67,18 @@ class _LoginScreenState extends State<LoginScreen> {
     } else if (password.isEmpty) {
       showMessage(message: "Please fill password");
     } else {
-      setState(() {
-        isInProgress = true;
-      });
+      if (mounted) {
+        setState(() {
+          isInProgress = true;
+        });
+      }
 
       await Future.delayed(Duration(seconds: 1), () {
+        if (mounted) {
+          setState(() {
+            isInProgress = false;
+          });
+        }
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -94,6 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
             debugShowCheckedModeBanner: false,
             theme: AppTheme.getThemeFromThemeMode(value.themeMode()),
             home: Scaffold(
+                resizeToAvoidBottomInset: false,
                 key: _scaffoldKey,
                 body: Container(
                     color: customAppTheme.bgLayer1,
@@ -228,7 +236,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 highlightColor: themeData.colorScheme.primary,
                                 splashColor: Colors.white.withAlpha(100),
                                 padding: Spacing.only(top: 16, bottom: 16),
-                                onPressed: isInProgress ? () {} : () => login(),
+                                onPressed:
+                                    isInProgress ? () {} : () => _handleLogin(),
                                 child: Stack(
                                   overflow: Overflow.visible,
                                   alignment: Alignment.center,

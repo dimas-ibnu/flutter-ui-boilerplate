@@ -57,29 +57,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   _handleRegister() async {
+    String username = nameTFController.text;
     String email = emailTFController.text;
     String password = passwordTFController.text;
 
-    // if (email.isEmpty) {
-    //   showMessage(message: "Please Fill Email");
-    // } else if (Validator.isEmail(email)) {
-    //   showMessage(message: "Please fill email properly");
-    // } else if (password.isEmpty) {
-    //   showMessage(message: "Please fill password");
-    // } else {
-    setState(() {
-      isInProgress = true;
-    });
+    if (username.isEmpty) {
+      showMessage(message: "Please Fill Username");
+    } else if (email.isEmpty) {
+      showMessage(message: "Please Fill Email");
+    } else if (Validator.isEmail(email)) {
+      showMessage(message: "Please fill email properly");
+    } else if (password.isEmpty) {
+      showMessage(message: "Please fill password");
+    } else {
+      setState(() {
+        isInProgress = true;
+      });
 
-    await Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext context) => LoginScreen(),
-        ),
-      );
-    });
-    // }
+      await Future.delayed(Duration(seconds: 3), () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) => LoginScreen(),
+          ),
+        );
+      });
+    }
   }
 
   @override
@@ -244,7 +247,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 highlightColor: themeData.colorScheme.primary,
                                 splashColor: Colors.white.withAlpha(100),
                                 padding: Spacing.only(top: 16, bottom: 16),
-                                onPressed: () {},
+                                onPressed: _handleRegister,
                                 child: Stack(
                                   overflow: Overflow.visible,
                                   alignment: Alignment.center,

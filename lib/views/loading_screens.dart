@@ -1,5 +1,5 @@
-import 'package:Boilerplate/AppTheme.dart';
-import 'package:Boilerplate/utils/SizeConfig.dart';
+import 'package:boilerplate_ui/app_theme.dart';
+import 'package:boilerplate_ui/utils/SizeConfig.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:shimmer/shimmer.dart';

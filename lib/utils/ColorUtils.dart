@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../AppTheme.dart';
+import '../app_theme.dart';
 
 class ColorUtils{
   static Color getColorFromRating(int rating,CustomAppTheme customAppTheme,ThemeData themeData){

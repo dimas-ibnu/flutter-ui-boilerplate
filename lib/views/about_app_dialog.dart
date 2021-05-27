@@ -1,9 +1,9 @@
-import 'package:Boilerplate/utils/SizeConfig.dart';
+import 'package:boilerplate_ui/utils/SizeConfig.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
-import '../AppTheme.dart';
-import '../AppThemeNotifier.dart';
+import '../app_theme.dart';
+import '../app_theme_notifier.dart';
 
 class AboutAppDialog extends StatefulWidget {
   @override

@@ -1,12 +1,12 @@
-import 'package:Boilerplate/utils/SizeConfig.dart';
-import 'package:Boilerplate/views/SelectThemeDialog.dart';
+import 'package:boilerplate_ui/utils/SizeConfig.dart';
+import 'package:boilerplate_ui/views/select_theme_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 
-import '../AppTheme.dart';
-import '../AppThemeNotifier.dart';
-import 'AboutAppDialog.dart';
+import '../app_theme.dart';
+import '../app_theme_notifier.dart';
+import 'about_app_dialog.dart';
 
 class SettingScreen extends StatefulWidget {
   @override

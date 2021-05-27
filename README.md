@@ -10,7 +10,7 @@ Flutter ui boilerplate is easiest way to create new flutter project with clean c
 - Loading Screen
 - Media Query
 
-#Run Project
+# Run Project
 After clone the repository, you can run project by typing [flutter run]
 
 # Dark Theme

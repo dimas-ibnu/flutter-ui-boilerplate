@@ -12,8 +12,8 @@ Flutter ui boilerplate is easiest way to create new flutter project with clean c
 
 ## Run Project
 > ##### Enviroment Setup
- * flutter version support `Flutter 1.22.`
- * recommended dart version  `Flutter 1.22.6`
+ * flutter version support `Flutter 1.22.6`
+ * recommended dart version  `Dart 2.10.5`
 > ##### Note : 
 *if you have `flutter version 2.0` or above, it may cause error unsupport version
 

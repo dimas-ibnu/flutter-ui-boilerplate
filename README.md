@@ -1,5 +1,5 @@
 # Flutter UI Boilerplate
-## _Sharing for fun_
+## _"Sharing for fun"_
 
 Flutter ui boilerplate is easiest way to create new flutter project with clean code and well organized file folder.
 
@@ -10,8 +10,14 @@ Flutter ui boilerplate is easiest way to create new flutter project with clean c
 - Loading Screen
 - Media Query
 
-# Run Project
-After clone the repository, you can run project by typing [flutter run]
+## Run Project
+> ##### Enviroment Setup
+ * flutter version support `Flutter 1.22.`
+ * recommended dart version  `Flutter 1.22.6`
+> ##### Note : 
+*if you have `flutter version 2.0` or above, it may cause error unsupport version
+
+After clone the repository, you can run project by running `flutter pub get`
 
 Dashboard Reference by : https://www.facebook.com/yosga10
 ![ui](https://user-images.githubusercontent.com/49100522/117755405-5779ff80-b246-11eb-8053-1fd4d3038ecf.jpg)

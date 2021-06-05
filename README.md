@@ -3,7 +3,7 @@
 
 Flutter ui boilerplate is easiest way to create new flutter project with clean code and well organized file folder.
 
-![](https://media.giphy.com/media/L4Tv7PGXjfp8G51N7N/giphy.gif | width=100)
+![Alt Text](https://media.giphy.com/media/L4Tv7PGXjfp8G51N7N/giphy.gif)
 
 ## Features : 
 - Light & Dark Themes

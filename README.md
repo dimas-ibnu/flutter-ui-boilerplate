@@ -13,13 +13,10 @@ Flutter ui boilerplate is easiest way to create new flutter project with clean c
 - Media Query
 
 ## Run Project
-> ##### Enviroment Setup
- * Support flutter latest version `Flutter 2.2`
- * recommended dart version  `Dart 2.10.5`
-> ##### Note : 
-*if you have `flutter version 2.0` or above, it may cause error unsupport version
-
-After clone the repository, you can run project by running `flutter pub get`
+1. Fork this repository
+2. clone repo using command `git@github.com:{your-github-username}/flutter-ui-boilerplate.git`
+3. to download package needs, type command `flutter pub get`
+4. run this project with command `flutter run lib/main.dart`
 
 Dashboard Reference by : https://www.facebook.com/yosga10
 ![ui](https://user-images.githubusercontent.com/49100522/117755405-5779ff80-b246-11eb-8053-1fd4d3038ecf.jpg)

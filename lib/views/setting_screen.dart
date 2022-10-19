@@ -1,4 +1,4 @@
-import 'package:boilerplate_ui/utils/SizeConfig.dart';
+import 'package:boilerplate_ui/utils/size_config.dart';
 import 'package:boilerplate_ui/views/select_theme_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';

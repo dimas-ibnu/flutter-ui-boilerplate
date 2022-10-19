@@ -1,4 +1,4 @@
-import 'package:boilerplate_ui/utils/SizeConfig.dart';
+import 'package:boilerplate_ui/utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -58,8 +58,7 @@ class _AboutAppDialogState extends State<AboutAppDialog> {
                           Container(
                             margin: Spacing.only(top: 20, bottom: 20),
                             decoration: BoxDecoration(
-                                color:
-                                    themeData.colorScheme.onPrimary,
+                                color: themeData.colorScheme.onPrimary,
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
                                   //Set your logo App Here
@@ -74,7 +73,7 @@ class _AboutAppDialogState extends State<AboutAppDialog> {
                             child: Container(
                               padding: Spacing.all(20),
                               child: Text(appDescription,
-                              textAlign: TextAlign.justify,
+                                  textAlign: TextAlign.justify,
                                   style: AppTheme.getTextStyle(
                                     themeData.textTheme.caption,
                                   )),

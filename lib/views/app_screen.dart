@@ -1,6 +1,6 @@
 import 'package:boilerplate_ui/app_theme.dart';
 import 'package:boilerplate_ui/app_theme_notifier.dart';
-import 'package:boilerplate_ui/utils/SizeConfig.dart';
+import 'package:boilerplate_ui/utils/size_config.dart';
 import 'package:boilerplate_ui/views/home_screen.dart';
 import 'package:boilerplate_ui/views/setting_screen.dart';
 import 'package:boilerplate_ui/views/auth/register_screen.dart';
@@ -176,7 +176,6 @@ class _AppScreenState extends State<AppScreen>
                                   MdiIcons.cog,
                                   color: themeData.colorScheme.onBackground,
                                 )),
-                     
                     ],
                   ),
                 )),

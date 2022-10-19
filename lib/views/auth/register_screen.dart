@@ -1,7 +1,7 @@
 import 'package:boilerplate_ui/app_theme.dart';
 import 'package:boilerplate_ui/app_theme_notifier.dart';
-import 'package:boilerplate_ui/utils/SizeConfig.dart';
-import 'package:boilerplate_ui/utils/Validator.dart';
+import 'package:boilerplate_ui/utils/size_config.dart';
+import 'package:boilerplate_ui/utils/validator.dart';
 import 'package:boilerplate_ui/views/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';

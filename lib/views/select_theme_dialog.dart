@@ -1,4 +1,4 @@
-import 'package:boilerplate_ui/utils/SizeConfig.dart';
+import 'package:boilerplate_ui/utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../app_theme.dart';
@@ -49,7 +49,6 @@ class _SelectThemeDialogState extends State<SelectThemeDialog> {
                             style: AppTheme.getTextStyle(
                                 themeData.textTheme.subtitle2,
                                 fontWeight: 600)),
-                        
                       ],
                     ),
                   ),
@@ -74,7 +73,6 @@ class _SelectThemeDialogState extends State<SelectThemeDialog> {
                             style: AppTheme.getTextStyle(
                                 themeData.textTheme.subtitle2,
                                 fontWeight: 600)),
-                        
                       ],
                     ),
                   ),

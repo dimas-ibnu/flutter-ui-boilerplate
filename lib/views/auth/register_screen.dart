@@ -239,17 +239,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   ),
                                 ],
                               ),
-                              child: FlatButton(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(MySize.size8)),
-                                color: themeData.colorScheme.primary,
-                                highlightColor: themeData.colorScheme.primary,
-                                splashColor: Colors.white.withAlpha(100),
-                                padding: Spacing.only(top: 16, bottom: 16),
+                              child: ElevatedButton(
+                                // shape: RoundedRectangleBorder(
+                                //     borderRadius:
+                                //         BorderRadius.circular(MySize.size8)),
+                                // color: themeData.colorScheme.primary,
+                                // highlightColor: themeData.colorScheme.primary,
+                                // splashColor: Colors.white.withAlpha(100),
+                                // padding: Spacing.only(top: 16, bottom: 16),
                                 onPressed: _handleRegister,
                                 child: Stack(
-                                  overflow: Overflow.visible,
+                                  // overflow: Overflow.visible,
                                   alignment: Alignment.center,
                                   children: <Widget>[
                                     Align(
@@ -345,15 +345,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (duration == null) {
       duration = Duration(seconds: 3);
     }
-    _scaffoldKey.currentState.showSnackBar(
-      SnackBar(
-        duration: duration,
-        content: Text(message,
-            style: AppTheme.getTextStyle(themeData.textTheme.subtitle2,
-                letterSpacing: 0.4, color: themeData.colorScheme.onPrimary)),
-        backgroundColor: themeData.colorScheme.primary,
-        behavior: SnackBarBehavior.fixed,
-      ),
-    );
+    // _scaffoldKey.currentState.showSnackBar(
+    //   SnackBar(
+    //     duration: duration,
+    //     content: Text(message,
+    //         style: AppTheme.getTextStyle(themeData.textTheme.subtitle2,
+    //             letterSpacing: 0.4, color: themeData.colorScheme.onPrimary)),
+    //     backgroundColor: themeData.colorScheme.primary,
+    //     behavior: SnackBarBehavior.fixed,
+    //   ),
+    // );
   }
 }
